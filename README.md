@@ -397,7 +397,7 @@ class CallbackDemoTable extends LivewireDatatable
         return [
             Column::name('users.id'),
 
-            Column::name('users.dob')->format(),
+            Column::name('users.dob'),
 
             Column::callback(['dob', 'signup_date'], function ($dob, $signupDate) {
                 $age = $signupDate->diffInYears($dob);
@@ -429,7 +429,7 @@ class CallbackDemoTable extends LivewireDatatable
 
             Column::name('users.dob')->view('tables.dateview'),
 
-            Column::name('users.signup_date')->format(),
+            Column::name('users.signup_date'),
         ];
     }
 ```
